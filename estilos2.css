@@ -1,0 +1,133 @@
+body {
+    background-color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+  
+html {
+    box-sizing: border-box;
+}
+  
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+  
+.column {
+    float: left;
+    width: 33.3%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+}
+  
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: 8px;
+}
+  
+.about-section {
+    padding: 35px;
+    text-align: center;
+    background-color: #000000;
+    color: rgb(189, 31, 31);
+}
+  
+.container {
+    padding: 0 16px;
+}
+  
+.container::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+  
+.title {
+    color: rgb(0, 0, 0);
+}
+  
+.button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: rgb(0, 0, 0);
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+}
+  
+.button:hover {
+    background-color: rgb(0, 0, 0);
+}
+  
+@media screen and (max-width: 650px) {
+    .column {
+      width: 100%;
+      display: block;
+    }
+}
+.contact_form{  
+    width: 460px; 
+    height: auto;
+    margin: 80px auto;
+    border-radius: 10px;  
+    padding-top: 30px;
+    padding-bottom: 20px;  
+    background-color: #000000; 
+    padding-left: 30px; 
+}
+span{
+    color: #000000; 
+}
+.aviso{
+    font-size: 13px;  
+    color: #0e0e0e;  
+}
+h1{
+    font-size: 39px;  
+    text-align: letf; 
+    padding-bottom: 20px; 
+    color: #ffffff;
+}
+h3{
+    font-size: 16px; 
+    padding-bottom: 30px;
+    color: #0e0e0e;   
+}
+p{
+    font-size: 16px; 
+    color: #000000; 
+}
+p1{
+    font-size: 16px; 
+    color: #fffdfd; 
+}
+p2{
+    font-size: 18px; 
+    color: #000000; 
+}
+button p{
+    color: rgb(0, 0, 0); 
+}
+
+::-webkit-input-placeholder {
+ color: #a8a8a8;
+}
+
+
+::-webkit-textarea-placeholder {
+ color: #a8a8a8;
+}
+
+
+.formulario input:focus{
+    outline:0;
+    border: 1px solid #97d848;
+}
+
+
+.formulario textarea:focus{
+    outline:0;
+    border: 1px solid #97d848;
+}
