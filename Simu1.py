@@ -9,6 +9,9 @@ class persona:
         self.Tp = self.Pcantidad*PromedioCompra
     def CambiarTiempo(self):
         self.Tp = self.Tp - 1
+    def getCantidad(self):  #retorna la cantidad de cosas que tiene
+        return self.Pcantidad
+
 class DatosCaja:
     TiempoTotal = 0
     Clientes_Despachados = 0
@@ -93,3 +96,61 @@ while(Temporizador < 3600*3): # 3600 es 1 hora, solo para testear
     Entra+=1
     Temporizador+=1
     
+if __name__ == '__main__':
+    while True :
+        print(" 1- SIMULAR. ")
+        print(" 2- INGRESAR A BASE DE DATOS. ")
+        print(" 3- EDITAR ALGUNA SIMULACIÓN ANTERIOR. ")
+        print(" 4- SALIR. ")
+        opcion = int(input(" INGRESE OPCIÓN. "))
+        if (opcion == 1):
+            texto = input("Ingrese los datos del simulador (nombre/fecha/N°simulacion): ")
+            horasdiarias = int(input("Ingresa horas diarias trabajadas: "))
+            periodos = int(input("¿En cuántos períodos dividirá el día laboral?: "))
+            clientestotal = int(input("Total de clientes por día: "))
+            distribucionporcentual = input(f"La distribución porcentual de los {periodos} periodos: ")
+            cajasporperiodo = input(f"La distribución de cajas en los {periodos} periodos: ")
+            minprod = int(input("Cantidad Mín de productos : "))
+            maxprod = int(input(f"Cantidad máx de productos (debe ser mayor a {minprod} ): "))
+            promseleccion = int(input("Ingrese tiempo promedio de selección de productos: "))
+            prommarcado = int(input("Ingrese tiempo de marcado por producto: "))
+            prompago = int(input("Ingrese tiempo promedio de pago por cliente: "))
+            atendidos = 0
+            productos = 0
+            largo = 0
+            distribucion = distribucionporcentual.split("/")
+            '''FORMULA--------'''n = horasdiarias/periodos #n es la cantidad de horas que cubre cada periodo
+            '''FORMULA--------'''tiempoperiodo = (3600*10*n)/10 #entrega el tiempo en segundos que tiene cada periodo dentro de las 10 hrs 
+            # asi creo que es la logica que deberia seguir el cod
+            '''
+            Esto es como mas o menos creo que deberia ser los pasos del programa.
+            obviamente ocupando las clases de arriba y hay que adaptarlas a ese cod
+
+            for i in range(0, periodos):    Aqui recorre los x periodos
+
+                FORMULA--------clientes = (clientestotal*distribucion[i])/100  formula que entrega el total de clientes por periodo
+                aqui obtenemos los clientes de este periodo.
+
+                for j in range(0, clientes):  por cada periodo crea los clientes que corresponden y los encola 
+                    p = persona(minprod, maxprod)
+                    p.tiempopersonal(promseleccion)
+                    cola = Cola()
+                    cola.encolar(p)
+                for k in range(0, tiempoperiodo): va simulando los periodos, aqui va sacando los clientes y simulando sus compras y cambiando sus tiempos 
+                    if(p.getTiempo() == 0):
+                        atendidos += 1
+                        productos += p.getCantidad()
+                        cola.desencolar(p)
+                    else:
+                        ..............
+                        '''
+
+            #for i in range(0, len(distribucion)):
+            #   print(distribucion[i])
+        elif (opcion == 2):
+            print("Aún no programado :( ")
+        elif (opcion == 3):
+            print("Aún no programado :( ")
+        elif (opcion == 4):
+            print(" MUCHAS GRACIAS POR UTILIZAR NUESTRO SOFTWARE!! :) ")
+            break
