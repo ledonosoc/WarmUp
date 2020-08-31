@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Simulacion proyecto</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/estilos.css">
+</head>
+<body>
+    <div id="menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="base.html">Historial de Simulaciones</a></li>
+            <li><a href="about.html">Sobre Nosotros</a></li>
+        </ul>
+    </div>
+    <form action="submeter-formulario.php" method="post">
+        <h2>SIMULADOR PARA AFORO EN TIENDAS DE RETAIL </h2>
+        <textarea maxlength="60" name="Simulacion" required="obligatorio" placeholder="Escriba los datos de esta simulación(nombre responsable/fecha/N°simulación)."></textarea>
+        <input type="number" type="range" min="0" max="100" name="Horas diarias de atención" placeholder="Horas diarias de atención.">
+        <input type="number" type="range" min="10" max="100" name="Periodos de tiempo o 'pasos' " placeholder="Periodos de tiempo o 'pasos'.">
+        <input type="number" type="range" min="0" max="100000" name="Clientes esperados por día" placeholder="Clientes esperados por día.">
+        <textarea maxlength="30" name="Simulacion" placeholder="Distribución de los 10 porcentajes (separando por un '/' cada uno de los valores)."></textarea>
+        <textarea maxlength="30" name="Simulacion" placeholder="Distribución del N° de cajas (separando por un '/' cada uno de los valores)."></textarea>
+        <input type="number" type="range" min="0" max="200" name="Mín productos por cliente" placeholder="Mín productos por cliente.">
+        <input type="number" type="range" min="0" max="200" name="Máx productos por cliente(debe ser mayor al mín)" placeholder="Máx productos por cliente.">
+        <input type="number" type="range" min="0" max="100" name="Tiempo promedio de selección de productos por cliente" placeholder="Tiempo promedio de selección de productos por cliente (en segundos).">
+        <input type="number" type="range" min="0" max="100" name="Tiempo promedio de marcado por producto (en segundos)" placeholder="Tiempo promedio de marcado por producto (en segundos).">
+        <input type="number" type="range" min="0" max="100" name="Tiempo promedio de pago en caja (en segundos)" placeholder="Tiempo promedio de pago en caja (en segundos).">
+        <a href="resultados.html"><input type="button" value="Completado"></a>
+    </form>   
+</body>
+</html>
