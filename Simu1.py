@@ -51,7 +51,7 @@ def CrearDatosCaja(NumeroDeCajas):
         Diccionario[x] = DatosCaja()
     return Diccionario
 def Equal_Caja(CajasIguales):
-    return ran.randrange(0, len(CajasIguales))
+    return CajasIguales[ran.randrange(0, len(CajasIguales))]
 def BusquedaMenor(Cajas):
     Min = len(Cajas[0])
     for x in Cajas:
@@ -78,9 +78,13 @@ while(Temporizador < 3600*3): # 3600 es 1 hora, solo para testear
             MenorCola = BusquedaMenor(Cajas) # Retorna el tamaño de la cola más pequeña, tiempo lineal
             for a in range(0,len(Cajas)):
                 if len(Cajas[a]) == MenorCola: # Si existe otra cola de menor tamaño se agrega a un arreglo junto a las demás de igual tam
-                    CajasBajas.append(Cajas[a])
+                    CajasBajas.append(a)
             Encolar = Equal_Caja(CajasBajas) # Retorna un número aleatorio de entre las cajas con el menor tamaño
             Cajas[Encolar].append(Personas[x])
+            DatosCaja[Encolar].ClientesEnCaja()
+            DatosCaja[Encolar].SetProductosTotales(Personas[x])
+            DatosCaja[Encolar].ProductosTotalesCaja(Personas[x])
+
             while len(CajasBajas) > 0: #Vacia la cola auxiliar
                 CajasBajas.pop()              
         else:
@@ -88,3 +92,4 @@ while(Temporizador < 3600*3): # 3600 es 1 hora, solo para testear
 
     Entra+=1
     Temporizador+=1
+    
