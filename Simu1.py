@@ -79,57 +79,79 @@ def BusquedaMenor(Cajas):
             Minimo = len(x)
     return Minimo
 # Codigo de prueba
-PromedioEntrada = EntrarSupermercado(3600*3,120) #Cada cuanto tiempo entra una persona al Supermercado
-Personas = CrearListaPersonas(0,60,120,10,10) # Lista de personas
-Temporizador = 0
-Entra = 0
-PersonasDentro = 0
-Cajas = CrearCajas(5) # 5 suponiendo que es el parametro que entrega el Cliente
-DatosCajas = CrearDatosCaja(5)
-CajasBajas = [] # Para el proceso de seleccionar una caja aleatoria 
-i = 0
+if __name__ == '__main__':
+    while True :
+        print(" 1- SIMULAR. ")
+        print(" 2- INGRESAR A BASE DE DATOS. ")
+        print(" 3- EDITAR ALGUNA SIMULACIÓN ANTERIOR. ")
+        print(" 4- SALIR. ")
+        opcion = int(input(" INGRESE OPCIÓN. "))
+        if (opcion == 1):
+            texto = input("Ingrese los datos del simulador (nombre/fecha/N°simulacion): ")
+            horasdiarias = int(input("Ingresa horas diarias trabajadas: "))
+            periodos = int(input("¿En cuántos períodos dividirá el día laboral?: "))
+            clientestotal = int(input("Total de clientes por día: "))
+            distribucionporcentual = input("La distribución porcentual de los  periodos: ")
+            cajasporperiodo = input("La distribución de cajas en los periodos: ")
+            minprod = int(input("Cantidad Mín de productos : "))
+            maxprod = int(input("Cantidad máx de productos (debe ser mayor a {minprod} ): "))
+            promseleccion = int(input("Ingrese tiempo promedio de selección de productos: "))
+            prommarcado = int(input("Ingrese tiempo de marcado por producto: "))
+            prompago = int(input("Ingrese tiempo promedio de pago por cliente: "))
+            distribucion = distribucionporcentual.split("/")
+            cajas = cajasporperiodo.split(",")
+            for n in range (0, periodos):
+                PromedioEntrada = EntrarSupermercado(3600*horasdiarias/periodos,120) #Cada cuanto tiempo entra una persona al Supermercado
+                Personas = CrearListaPersonas(minprod,maxprod,int(clientestotal*distribucion[n]),promseleccion,prompago) # Lista de personas
+                Temporizador = 0
+                Entra = 0
+                PersonasDentro = 0
+                Cajas = CrearCajas(cajas[n]) #  suponiendo que es el parametro que entrega el Cliente
+                DatosCajas = CrearDatosCaja(cajas[n])
+                CajasBajas = [] # Para el proceso de seleccionar una caja aleatoria 
+                i = 0
 
-while(Temporizador < 3600*3):
-    if(Entra == PromedioEntrada):
-        PersonasDentro += 1
-        Entra = 0
-    for x in range(0,PersonasDentro):
-        
-        Personas[x].CambiarTiempo() # Reduce en 1 el tiempo del cliente en escoger los productos  
-        if(Personas[x].Tp == 0):
-            MenorCola = BusquedaMenor(Cajas) 
-            for a in range(0,len(Cajas)):
-                if len(Cajas[a]) == MenorCola:
-                    CajasBajas.append(a)
-            Encolar = Equal_Caja(CajasBajas) 
-            Cajas[Encolar].append(Personas[x])
-            DatosCajas[Encolar].Set_ClientesTotalesCaja()
-            while len(CajasBajas) > 0:
-                CajasBajas.pop()              
-    for a in range(5):
-        if(len(Cajas[a]) == 0):
-            continue
-        elif(len(Cajas[a]) > 0):
-            Cajas[a][0].EstoyPagando()
-            Cajas[a][0].PagarProducto() # Al llegar al promedio de pago de 1 producto la persona popea 1 objeto
-            DatosCajas[a].SetTiempo() # LaCaja aumenta en 1 el tiempo que ha atendido gente
+                while(Temporizador < 3600*horasdiarias/periodos):
+                    if(Entra == PromedioEntrada):
+                        PersonasDentro += 1
+                        Entra = 0
+                    for x in range(0,PersonasDentro):
+                        
+                        Personas[x].CambiarTiempo() # Reduce en 1 el tiempo del cliente en escoger los productos  
+                        if(Personas[x].Tp == 0):
+                            MenorCola = BusquedaMenor(Cajas) 
+                            for a in range(0,len(Cajas)):
+                                if len(Cajas[a]) == MenorCola:
+                                    CajasBajas.append(a)
+                            Encolar = Equal_Caja(CajasBajas) 
+                            Cajas[Encolar].append(Personas[x])
+                            DatosCajas[Encolar].Set_ClientesTotalesCaja()
+                            while len(CajasBajas) > 0:
+                                CajasBajas.pop()              
+                    for a in range(5):
+                        if(len(Cajas[a]) == 0):
+                            continue
+                        elif(len(Cajas[a]) > 0):
+                            Cajas[a][0].EstoyPagando()
+                            Cajas[a][0].PagarProducto() # Al llegar al promedio de pago de 1 producto la persona popea 1 objeto
+                            DatosCajas[a].SetTiempo() # LaCaja aumenta en 1 el tiempo que ha atendido gente
 
 
-            if(Cajas[a][0].DesencolarProducto == Cajas[a][0].PromDespacho): # se llega al promedio de despacho de un producto
-                DatosCajas[a].SetProductosTotales() #La Caja aumenta en 1 la cantidad de productos que ha recibido
-                Cajas[a][0].ProductoPagado() # Reduce en 1 la cantidad de productos que posee el cliente
-                Cajas[a][0].ResetDesencolarProducto() # resetea el contador para popear productos  
-            if(Cajas[a][0].TiempoPagandoz == 0):     
-                Cajas[a].pop()
-                DatosCajas[a].Clientes_Despachados += 1
-        
+                            if(Cajas[a][0].DesencolarProducto == Cajas[a][0].PromDespacho): # se llega al promedio de despacho de un producto
+                                DatosCajas[a].SetProductosTotales() #La Caja aumenta en 1 la cantidad de productos que ha recibido
+                                Cajas[a][0].ProductoPagado() # Reduce en 1 la cantidad de productos que posee el cliente
+                                Cajas[a][0].ResetDesencolarProducto() # resetea el contador para popear productos  
+                            if(Cajas[a][0].TiempoPagandoz == 0):     
+                                Cajas[a].pop()
+                                DatosCajas[a].Clientes_Despachados += 1
+                        
 
-    Entra+=1
-    Temporizador+=1
-for i in range(5):
-    print(DatosCajas[i].Mostrar())
-    print("-------------------")
-for i in range(5):
-    print("Gente en cola caja",i,": ",len(Cajas[i]))
+                    Entra+=1
+                    Temporizador+=1
+                for i in range(5):
+                    print(DatosCajas[i].Mostrar())
+                    print("-------------------")
+                for i in range(5):
+                    print("Gente en cola caja",i,": ",len(Cajas[i]))
 
     
