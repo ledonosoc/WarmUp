@@ -14,20 +14,85 @@
             <li><a href="about.html">Sobre Nosotros</a></li>
         </ul>
     </div>
-    <form action="submeter-formulario.php" method="post">
-        <h2>SIMULADOR PARA AFORO EN TIENDAS DE RETAIL </h2>
-        <textarea maxlength="60" name="Simulacion" required="obligatorio" placeholder="Escriba los datos de esta simulación(nombre responsable/fecha/N°simulación)."></textarea>
-        <input type="number" type="range" min="0" max="100" name="Horas diarias de atención" placeholder="Horas diarias de atención.">
-        <input type="number" type="range" min="10" max="100" name="Periodos de tiempo o 'pasos' " placeholder="Periodos de tiempo o 'pasos'.">
-        <input type="number" type="range" min="0" max="100000" name="Clientes esperados por día" placeholder="Clientes esperados por día.">
-        <textarea maxlength="30" name="Simulacion" placeholder="Distribución de los 10 porcentajes (separando por un '/' cada uno de los valores)."></textarea>
-        <textarea maxlength="30" name="Simulacion" placeholder="Distribución del N° de cajas (separando por un '/' cada uno de los valores)."></textarea>
-        <input type="number" type="range" min="0" max="200" name="Mín productos por cliente" placeholder="Mín productos por cliente.">
-        <input type="number" type="range" min="0" max="200" name="Máx productos por cliente(debe ser mayor al mín)" placeholder="Máx productos por cliente.">
-        <input type="number" type="range" min="0" max="100" name="Tiempo promedio de selección de productos por cliente" placeholder="Tiempo promedio de selección de productos por cliente (en segundos).">
-        <input type="number" type="range" min="0" max="100" name="Tiempo promedio de marcado por producto (en segundos)" placeholder="Tiempo promedio de marcado por producto (en segundos).">
-        <input type="number" type="range" min="0" max="100" name="Tiempo promedio de pago en caja (en segundos)" placeholder="Tiempo promedio de pago en caja (en segundos).">
-        <a href="resultados.html"><input type="button" value="Completado"></a>
-    </form>   
+    <div class="contact_form">
+
+        <div class="formulario">            
+                    <form action="resultados.html" method="post"> 
+                    <h2>SIMULADOR PARA AFORO EN TIENDAS DE RETAIL </h2>               
+                                <p>
+                                    <label for="Simulacion" class="colocar_simulacion">Datos Simulación
+                                        <span class="obligatorio">*</span>
+                                    </label>
+                                        <textarea maxlength="60" name="Simulacion" id="simulacion" required="obligatorio" placeholder="Escriba los datos de esta simulación(nombre responsable/fecha/N°simulación)."></textarea>
+                                </p>
+                            
+                                <p>
+                                    <label for="horas diarias" class="colocar_horas">Horas de atención
+                                        <span class="obligatorio">*</span>
+                                    </label>
+                                        <input type="number" type="range" min="0" max="100" id="horas diarias" required="obligatorio"name="Horas diarias de atención" placeholder="Horas diarias de atención.">
+                                </p>
+                        
+                                <p>
+                                    <label for="periodos" class="colocar_periodos">Cantidad de Periodos
+                                    </label>
+                                        <input type="number" type="range" min="10" max="100" id="periodos" required="obligatorio" name="Periodos de tiempo o 'pasos' " placeholder="Periodos de tiempo o 'pasos'.">
+                                </p>                                            
+                                <p>
+                                    <label for="clientes totales" class="colocar_clientes">Clientes por día
+                                        <span class="obligatorio">*</span>
+                                    </label>
+                                        <input type="number" type="range" min="0" max="100000" id="clientes totales" required="obligatorio" name="Clientes esperados por día" placeholder="Clientes esperados por día.">
+                                </p>          
+                                <p>
+                                    <label for="distribucion porcentual" class="colocar_distribucion">Distribución porcentual de los periodos
+                                        <span class="obligatorio">*</span>
+                                    </label>                     
+                                      <textarea maxlength="30" id="distribucion porcentual" required="obligatorio" name="Simulacion" placeholder="Distribución de los 10 porcentajes (separando por un '/' cada uno de los valores)."></textarea>
+                                </p>
+                                <p>
+                                    <label for="distribucion de cajas" class="colocar_distribucioncajas">Distribución de las cajas por periodo
+                                        <span class="obligatorio">*</span>
+                                    </label>                     
+                                      <textarea maxlength="30" id="distribucion de cajas" required="obligatorio" name="Simulacion" placeholder="Distribución del N° de cajas (separando por un '/' cada uno de los valores)."></textarea>
+                                </p>
+                                <p>
+                                    <label for="min prod" class="colocar_min">Cantidad minima de productos
+                                        <span class="obligatorio">*</span>
+                                    </label>                     
+                                      <input type="number" type="range" min="0" max="200" id="min prod" required="obligatorio" name="Mín productos por cliente" placeholder="Mín productos por cliente.">
+                                </p>
+                                <p>
+                                    <label for="max prod" class="colocar_max">Cantidad máxima de productos
+                                        <span class="obligatorio">*</span>
+                                    </label>                     
+                                      <input type="number" type="range" min="0" max="200"  id="max prod" required="obligatorio" name="Máx productos por cliente(debe ser mayor al mín)" placeholder="Máx productos por cliente.">
+                                </p>
+                                <p>
+                                    <label for="prom selec" class="colocar_proms">Tiempo promedio de selección de productos
+                                        <span class="obligatorio">*</span>
+                                    </label>                     
+                                      <input type="number" type="range" min="0" max="100" id="prom selec" required="obligatorio" name="Tiempo promedio de selección de productos por cliente (en segundos)" placeholder="Tiempo promedio de selección de productos por cliente (en segundos).">
+                                </p>
+                                <p>
+                                    <label for="prom marcado" class="colocar_promm">Tiempo promedio del marcado en caja de productos
+                                        <span class="obligatorio">*</span>
+                                    </label>                     
+                                        <input type="number" type="range" min="0" max="100" id="prom marcado" required="obligatorio" name="Tiempo promedio de marcado por producto (en segundos)" placeholder="Tiempo promedio de marcado por producto (en segundos).">                                </p>
+                                <p>
+                                    <label for="prom pago" class="colocar_promp">Tiempo promedio del pago en caja por cliente.
+                                        <span class="obligatorio">*</span>
+                                    </label>                     
+                                        <input type="number" type="range" min="0" max="100" id="prom pago" required="obligatorio" name="Tiempo promedio de pago en caja (en segundos)" placeholder="Tiempo promedio de pago en caja (en segundos).">
+
+                                </p> 
+                                                                    
+                                <button type="submit" class="btn btn-info" name="enviar_formulario" id="Simular"><p>Simular</p></button>
+                                <p class="aviso">
+                                    <span class="obligatorio"> * </span>los campos son obligatorios.
+                                </p>                                         
+                    </form>
+        </div>  
+    </div> 
 </body>
 </html>
