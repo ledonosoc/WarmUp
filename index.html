@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>Simulacion proyecto</title>
+    <title>Simulación proyecto</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos.css">
@@ -23,7 +23,7 @@
                                     <label for="Simulacion" class="colocar_simulacion">Datos Simulación
                                         <span class="obligatorio">*</span>
                                     </label>
-                                        <textarea maxlength="60" name="Simulacion" id="simulacion" required="obligatorio" placeholder="Escriba los datos de esta simulación(nombre responsable/fecha/N°simulación)."></textarea>
+                                        <textarea maxlength="60" name="Simulacion" id="simulacion" required="obligatorio" placeholder="Escriba los datos de esta simulación(nombre responsable/dd-mm-aaaa/N°simulación)."></textarea>
                                 </p>
                             
                                 <p>
@@ -36,7 +36,7 @@
                                 <p>
                                     <label for="periodos" class="colocar_periodos">Cantidad de Periodos
                                     </label>
-                                        <input type="number" type="range" min="10" max="100" id="periodos" required="obligatorio" name="Periodos de tiempo o 'pasos' " placeholder="Periodos de tiempo o 'pasos'.">
+                                        <input type="number" type="range" min="10" max="100" id="periodos" required="obligatorio" name="Periodos de tiempo o 'pasos' " placeholder="Períodos de tiempo o 'pasos' a simular.">
                                 </p>                                            
                                 <p>
                                     <label for="clientes totales" class="colocar_clientes">Clientes por día
@@ -48,13 +48,13 @@
                                     <label for="distribucion porcentual" class="colocar_distribucion">Distribución porcentual de los periodos
                                         <span class="obligatorio">*</span>
                                     </label>                     
-                                      <textarea maxlength="30" id="distribucion porcentual" required="obligatorio" name="Simulacion" placeholder="Distribución de los 10 porcentajes (separando por un '/' cada uno de los valores)."></textarea>
+                                      <textarea maxlength="30" id="distribucion porcentual" required="obligatorio" name="Simulacion" placeholder="Distribución porcentual de clientes por período (separando con un '/' cada uno de los valores. ejem: 10/5/7/8... etc)"></textarea>
                                 </p>
                                 <p>
                                     <label for="distribucion de cajas" class="colocar_distribucioncajas">Distribución de las cajas por periodo
                                         <span class="obligatorio">*</span>
                                     </label>                     
-                                      <textarea maxlength="30" id="distribucion de cajas" required="obligatorio" name="Simulacion" placeholder="Distribución del N° de cajas (separando por un '/' cada uno de los valores)."></textarea>
+                                      <textarea maxlength="30" id="distribucion de cajas" required="obligatorio" name="Simulacion" placeholder="Distribución del N° de cajas por período (separando con un '/' cada uno de los valores. ejem: 5/3/4/5... etc)"></textarea>
                                 </p>
                                 <p>
                                     <label for="min prod" class="colocar_min">Cantidad minima de productos
@@ -86,7 +86,15 @@
                                         <input type="number" type="range" min="0" max="100" id="prom pago" required="obligatorio" name="Tiempo promedio de pago en caja (en segundos)" placeholder="Tiempo promedio de pago en caja (en segundos).">
 
                                 </p> 
-                                                                    
+                                <p>
+                                    <label class="container">Confirmo que los datos fueron ingresados en el formato que se solicita.
+                                        <span class="obligatorio" >*</span>
+                                        <input type="checkbox" checked="checked" id="check" required="obligatorio">
+                                        <span class="checkmark" ></span>
+            
+                                    </label>
+                                </p>
+                                                           
                                 <button type="submit" class="btn btn-info" name="enviar_formulario" id="Simular"><p>Simular</p></button>
                                 <p class="aviso">
                                     <span class="obligatorio"> * </span>los campos son obligatorios.
