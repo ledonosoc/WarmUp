@@ -47,14 +47,14 @@
                                 <p>
                                     <label for="distribucion porcentual" class="colocar_distribucion">Distribución porcentual de los periodos
                                         <span class="obligatorio">*</span>
-                                    </label>                     
-                                      <textarea maxlength="30" id="distribucion porcentual" required="obligatorio" name="Simulacion" placeholder="Distribución porcentual de clientes por período (separando con un '/' cada uno de los valores. ejem: 10/5/7/8... etc)"></textarea>
+                                    </label>
+                                      <input type="text" id="distribucion porcentual" name="Simulacion" required="obligatorio" pattern="([0-9]{1,}/){9}[0-9]{1,}" title="Distribución porcentual de clientes por período (separando con un '/' cada uno de los valores. ejem: 10/5/7/8... etc)"><br><br>                     
                                 </p>
                                 <p>
                                     <label for="distribucion de cajas" class="colocar_distribucioncajas">Distribución de las cajas por periodo
                                         <span class="obligatorio">*</span>
-                                    </label>                     
-                                      <textarea maxlength="30" id="distribucion de cajas" required="obligatorio" name="Simulacion" placeholder="Distribución del N° de cajas por período (separando con un '/' cada uno de los valores. ejem: 5/3/4/5... etc)"></textarea>
+                                    </label> 
+                                      <input type="text" id="distribucion porcentual" name="Simulacion" required="obligatorio" pattern="([0-9]{1,}/){9}[0-9]{1,}" title="Distribución del N° de cajas por período (separando con un '/' cada uno de los valores. ejem: 5/3/4/5... etc)"><br><br>                    
                                 </p>
                                 <p>
                                     <label for="min prod" class="colocar_min">Cantidad minima de productos
