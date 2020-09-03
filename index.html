@@ -34,7 +34,7 @@
                                 </p>
                         
                                 <p>
-                                    <label for="periodos" class="colocar_periodos">Cantidad de Periodos
+                                    <label for="periodos" class="colocar_periodos">Cantidad de Períodos
                                     </label>
                                         <input type="number" type="range" min="10" max="100" id="periodos" required="obligatorio" name="Periodos de tiempo o 'pasos' " placeholder="Períodos de tiempo o 'pasos' a simular.">
                                 </p>                                            
@@ -45,7 +45,7 @@
                                         <input type="number" type="range" min="0" max="100000" id="clientes totales" required="obligatorio" name="Clientes esperados por día" placeholder="Clientes esperados por día.">
                                 </p>          
                                 <p>
-                                    <label for="distribucion porcentual" class="colocar_distribucion">Distribución porcentual de los periodos
+                                    <label for="distribucion porcentual" class="colocar_distribucion">Distribución porcentual de los periodos (los datos ingresados no debe sumar mas de 100%)
                                         <span class="obligatorio">*</span>
                                     </label>
                                       <input type="text" id="distribucion porcentual" name="Simulacion" required="obligatorio" pattern="([0-9]{1,}/){9}[0-9]{1,}" title="Distribución porcentual de clientes por período (separando con un '/' cada uno de los valores. ejem: 10/5/7/8... etc)"><br><br>                     
@@ -60,7 +60,7 @@
                                     <label for="min prod" class="colocar_min">Cantidad minima de productos
                                         <span class="obligatorio">*</span>
                                     </label>                     
-                                      <input type="number" type="range" min="1" max="200" id="min prod" required="obligatorio" name="Mín productos por cliente" placeholder="Mín productos por cliente.">
+                                      <input type="number" type="range" min="1" max="100" id="min prod" required="obligatorio" name="Mín productos por cliente" placeholder="Mín productos por cliente.">
                                 </p>
                                 <p>
                                     <label for="max prod" class="colocar_max">Cantidad máxima de productos
@@ -72,18 +72,18 @@
                                     <label for="prom selec" class="colocar_proms">Tiempo promedio de selección de productos
                                         <span class="obligatorio">*</span>
                                     </label>                     
-                                      <input type="number" type="range" min="0" max="100" id="prom selec" required="obligatorio" name="Tiempo promedio de selección de productos por cliente (en segundos)" placeholder="Tiempo promedio de selección de productos por cliente (en segundos).">
+                                      <input type="number" type="range" min="0" max="120" id="prom selec" required="obligatorio" name="Tiempo promedio de selección de productos por cliente (en segundos)" placeholder="Tiempo promedio de selección de productos por cliente (en segundos).">
                                 </p>
                                 <p>
                                     <label for="prom marcado" class="colocar_promm">Tiempo promedio del marcado en caja de productos
                                         <span class="obligatorio">*</span>
                                     </label>                     
-                                        <input type="number" type="range" min="0" max="100" id="prom marcado" required="obligatorio" name="Tiempo promedio de marcado por producto (en segundos)" placeholder="Tiempo promedio de marcado por producto (en segundos).">                                </p>
+                                        <input type="number" type="range" min="0" max="120" id="prom marcado" required="obligatorio" name="Tiempo promedio de marcado por producto (en segundos)" placeholder="Tiempo promedio de marcado por producto (en segundos).">                                </p>
                                 <p>
                                     <label for="prom pago" class="colocar_promp">Tiempo promedio del pago en caja por cliente.
                                         <span class="obligatorio">*</span>
                                     </label>                     
-                                        <input type="number" type="range" min="0" max="100" id="prom pago" required="obligatorio" name="Tiempo promedio de pago en caja (en segundos)" placeholder="Tiempo promedio de pago en caja (en segundos).">
+                                        <input type="number" type="range" min="0" max="120" id="prom pago" required="obligatorio" name="Tiempo promedio de pago en caja (en segundos)" placeholder="Tiempo promedio de pago en caja (en segundos).">
 
                                 </p> 
                                 <p>
