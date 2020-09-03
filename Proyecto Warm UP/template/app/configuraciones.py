@@ -1,5 +1,6 @@
-host = "172.31.60.235"
+host = "localhost"
 port = 5432
-user = "ubuntu"
-password="123456"
-database = "warmup"
+user = "postgres"
+passwd="weareblue"
+database = "warmup2"
+
