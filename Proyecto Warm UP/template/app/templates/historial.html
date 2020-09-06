@@ -18,11 +18,22 @@
     </div>
     <div>
         <ul>
-            {% for id in simus %}
-            <a href="/historial/{{id[0]}}">{{id[1]}}</a>
-            <br>
-
-            {% endfor %}
+            <table class="table">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">N° </th>
+                  <th scope="col">Historial de Simulaciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for id in simus %}
+                  <tr>
+                    <th scope="row">1</th>
+                    <td><a href="/historial/{{id[0]}}">{{id[1]}}</a><br></td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
         </ul>
     </div>
 </body>
