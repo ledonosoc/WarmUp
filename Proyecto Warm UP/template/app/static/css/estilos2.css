@@ -131,3 +131,52 @@ button p{
     outline:0;
     border: 1px solid #97d848;
 }
+table{
+    margin-top: 50px;
+    caption-side: bottom;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+}
+th{
+    background-color: rgb(1, 101, 119);
+    color: white;
+}
+
+caption{
+    padding-top: 20px;
+    font-style: italic;
+}
+
+td,th{
+    text-align: center;
+    border: 2px solid black;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#menu{
+    text-align: center;
+    background-color: #000;
+
+}
+#menu ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#menu ul li{
+    display: inline-block;
+}
+#menu ul li a{
+    color: white;
+    display: block;
+    padding: 25px 25px;
+    text-decoration: none;
+}
+#menu ul li a:hover{
+    background-color: rgb(1, 101, 119);
+}
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans);

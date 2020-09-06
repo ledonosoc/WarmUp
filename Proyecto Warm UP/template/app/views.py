@@ -18,10 +18,116 @@ def index():
 def about():
 	return render_template('about.html')
 
-@app.route('/historial.html')
+@app.route('/historial')
 def historial():
-	return render_template('historial.html')
 
+	sql ="""
+	select id,identificacion from entradas order by id;"""
+	cur.execute(sql)
+	simus  = cur.fetchall()
+	print(simus)
+	
+	return render_template("historial.html", simus=simus )
+
+@app.route('/historial/<his_id>', methods=['GET'])
+def post(his_id):
+
+	sql ="""
+	select * from entradas where id = %s;
+	"""%(his_id)
+	# print sql
+	cur.execute(sql)
+	entry = cur.fetchall()
+
+	sql ="""
+	select * from resultados
+	where resultados.entrada_id = %s;
+	"""%(his_id)
+	# print sql
+	cur.execute(sql)
+	result  = cur.fetchall()
+
+	sql ="""
+	select * from res_horarios_uno
+	where res_horarios_uno.resultado_id = %s;
+	"""%(result[0][0])
+	# print sql
+	cur.execute(sql)
+	resultuno  = cur.fetchall()
+
+	sql ="""
+	select * from res_horarios_dos
+	where res_horarios_dos.resultado_id = %s;
+	"""%(result[0][0])
+	# print sql
+	cur.execute(sql)
+	resultdos  = cur.fetchall()
+
+	sql ="""
+	select * from res_horarios_tres
+	where res_horarios_tres.resultado_id = %s;
+	"""%(result[0][0])
+	# print sql
+	cur.execute(sql)
+	resulttres  = cur.fetchall()
+
+	sql ="""
+	select * from res_horarios_cuatro
+	where res_horarios_cuatro.resultado_id = %s;
+	"""%(result[0][0])
+	# print sql
+	cur.execute(sql)
+	resultcuatro  = cur.fetchall()
+
+	sql ="""
+	select * from res_horarios_cinco
+	where res_horarios_cinco.resultado_id = %s;
+	"""%(result[0][0])
+	# print sql
+	cur.execute(sql)
+	resultcinco  = cur.fetchall()
+
+	sql ="""
+	select * from res_horarios_seis
+	where res_horarios_seis.resultado_id = %s;
+	"""%(result[0][0])
+	# print sql
+	cur.execute(sql)
+	resultseis  = cur.fetchall()
+
+	sql ="""
+	select * from res_horarios_siete
+	where res_horarios_siete.resultado_id = %s;
+	"""%(result[0][0])
+	# print sql
+	cur.execute(sql)
+	resultsiete  = cur.fetchall()
+
+	sql ="""
+	select * from res_horarios_ocho
+	where res_horarios_ocho.resultado_id = %s;
+	"""%(result[0][0])
+	# print sql
+	cur.execute(sql)
+	resultocho  = cur.fetchall()
+
+	sql ="""
+	select * from res_horarios_nueve
+	where res_horarios_nueve.resultado_id = %s;
+	"""%(result[0][0])
+	# print sql
+	cur.execute(sql)
+	resultnueve  = cur.fetchall()
+
+	sql ="""
+	select * from res_horarios_diez
+	where res_horarios_diez.resultado_id = %s;
+	"""%(result[0][0])
+	# print sql
+	cur.execute(sql)
+	resultdiez  = cur.fetchall()
+
+	return render_template("especifico.html", entry=entry, result=result, resultuno = resultuno, resultdos=resultdos, resulttres=resulttres, resultcuatro= resultcuatro, resultcinco = resultcinco, resultseis=resultseis, resultsiete=resultsiete, resultocho = resultocho, resultnueve = resultnueve, resultdiez= resultdiez)
 
 class persona:
 
@@ -283,7 +389,7 @@ def resultado():
 
 				Promedio_De_Cola = 0
 				Promedio_De_Prods = 0
-				
+#--------------- Estos print son para confirmar que el try llegó hasta acá!, no son necesarios para el render 
 				for i in range(CantidadDeCajash[f]):
 
 					Promedio_De_Cola += DatosCajas[i].CalcularPromedio()
@@ -466,5 +572,6 @@ def resultado():
 			return render_template("resultado.html",entrada_id=entrada_id[0],tiempo_total_simulado=tiempo_total_simulado, identificador=identificador, horas_atencion=horas_atencion, pasos=pasos, clientes_por_dia=clientes_por_dia, min_productos=min_productos, max_productos=max_productos, tiempo_seleccion=tiempo_seleccion, tiempo_marcado=tiempo_marcado, tiempo_pago=tiempo_pago, dclientesuno=dclientesuno, dclientesdos=dclientesdos,dclientestres=dclientestres, dclientescuatro=dclientescuatro,dclientescinco=dclientescinco, dclientesseis=dclientesseis, dclientessiete=dclientessiete, dclientesocho=dclientesocho, dclientesnueve=dclientesnueve, dclientesdiez=dclientesdiez, dcajauno=dcajauno, dcajados=dcajados, dcajatres=dcajatres, dcajacuatro=dcajacuatro,dcajacinco=dcajacinco, dcajaseis=dcajaseis, dcajasiete=dcajasiete, dcajaocho=dcajaocho, dcajanueve=dcajanueve, dcajadiez=dcajadiez, ingresadosuno=ingresadosuno, ingresadosdos=ingresadosdos,ingresadostres=ingresadostres,ingresadoscuatro=ingresadoscuatro, ingresadoscinco=ingresadoscinco, ingresadosseis=ingresadosseis, ingresadossiete=ingresadossiete, ingresadosocho=ingresadosocho, ingresadosnueve=ingresadosnueve, ingresadosdiez=ingresadosdiez, despachadosuno=despachadosuno, despachadosdos=despachadosdos, despachadostres=despachadostres,despachadoscuatro=despachadoscuatro,despachadoscinco=despachadoscinco, despachadosseis=despachadosseis, despachadossiete=despachadossiete, despachadosocho=despachadosocho, despachadosnueve=despachadosnueve, despachadosdiez=despachadosdiez, promProdsuno=promProdsuno, promProdsdos=promProdsdos,promProdstres=promProdstres, promProdscuatro=promProdscuatro,promProdscinco=promProdscinco, promProdsseis=promProdsseis, promProdssiete=promProdssiete,promProdsocho=promProdsocho,promProdsnueve=promProdsnueve,promProdsdiez=promProdsdiez,colaMaxuno=colaMaxuno,colaMaxdos=colaMaxdos,colaMaxtres=colaMaxtres,colaMaxcuatro=colaMaxcuatro,colaMaxcinco=colaMaxcinco,colaMaxseis=colaMaxseis,colaMaxsiete=colaMaxsiete,colaMaxocho=colaMaxocho,colaMaxnueve=colaMaxnueve,colaMaxdiez=colaMaxdiez,promColauno=promColauno,promColados=promColados,promColatres=promColatres,promColacuatro=promColacuatro,promColacinco=promColacinco,promColaseis=promColaseis,promColasiete=promColasiete,promColaocho=promColaocho,promColanueve=promColanueve,promColadiez=promColadiez)
 		except:
 			pass
+# este return tiene comentada las variables mas adelante por la misma razón anterior
 			return render_template("resultado.html",entrada_id=entrada_id[0],tiempo_total_simulado=tiempo_total_simulado, identificador=identificador, horas_atencion=horas_atencion, pasos=pasos, clientes_por_dia=clientes_por_dia, min_productos=min_productos, max_productos=max_productos, tiempo_seleccion=tiempo_seleccion, tiempo_marcado=tiempo_marcado, tiempo_pago=tiempo_pago, dclientesuno=dclientesuno, dclientesdos=dclientesdos,dclientestres=dclientestres, dclientescuatro=dclientescuatro,dclientescinco=dclientescinco, dclientesseis=dclientesseis, dclientessiete=dclientessiete, dclientesocho=dclientesocho, dclientesnueve=dclientesnueve, dclientesdiez=dclientesdiez, dcajauno=dcajauno, dcajados=dcajados, dcajatres=dcajatres, dcajacuatro=dcajacuatro,dcajacinco=dcajacinco, dcajaseis=dcajaseis, dcajasiete=dcajasiete, dcajaocho=dcajaocho, dcajanueve=dcajanueve, dcajadiez=dcajadiez, ingresadosuno=ingresadosuno, ingresadosdos=ingresadosdos,ingresadostres=ingresadostres,ingresadoscuatro=ingresadoscuatro, ingresadoscinco=ingresadoscinco, ingresadosseis=ingresadosseis, ingresadossiete=ingresadossiete, ingresadosocho=ingresadosocho, ingresadosnueve=ingresadosnueve, ingresadosdiez=ingresadosdiez, despachadosuno=despachadosuno, despachadosdos=despachadosdos, despachadostres=despachadostres,despachadoscuatro=despachadoscuatro,despachadoscinco=despachadoscinco, despachadosseis=despachadosseis, despachadossiete=despachadossiete, despachadosocho=despachadosocho, despachadosnueve=despachadosnueve, despachadosdiez=despachadosdiez, promProdsuno=promProdsuno, promProdsdos=promProdsdos,promProdstres=promProdstres, promProdscuatro=promProdscuatro,promProdscinco=promProdscinco, promProdsseis=promProdsseis, promProdssiete=promProdssiete,promProdsocho=promProdsocho,promProdsnueve=promProdsnueve,promProdsdiez=promProdsdiez,colaMaxuno=colaMaxuno,colaMaxdos=colaMaxdos,colaMaxtres=colaMaxtres,colaMaxcuatro=colaMaxcuatro,colaMaxcinco=colaMaxcinco,colaMaxseis=colaMaxseis,colaMaxsiete=colaMaxsiete,colaMaxocho=colaMaxocho,colaMaxnueve=colaMaxnueve,colaMaxdiez=colaMaxdiez,promColauno=promColauno,promColados=promColados,promColatres=promColatres,promColacuatro=promColacuatro,promColacinco=promColacinco,promColaseis=promColaseis,promColasiete=promColasiete,promColaocho=promColaocho,promColanueve=promColanueve,promColadiez=promColadiez)
 

@@ -10,9 +10,19 @@
 <body>
     <div id="menu">
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="base.html">Historial de Simulaciones</a></li>
-            <li><a href="about.html">Sobre Nosotros</a></li>
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('historial') }}">Historial de Simulaciones</a></li>
+            <li><a href="{{ url_for('about') }}">Sobre Nosotros</a></li>
+        </ul>
+    </div>
+    </div>
+    <div>
+        <ul>
+            {% for id in simus %}
+            <a href="/historial/{{id[0]}}">{{id[1]}}</a>
+            <br>
+
+            {% endfor %}
         </ul>
     </div>
 </body>

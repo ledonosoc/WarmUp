@@ -9,8 +9,8 @@
 <body>
     <div id="menu">
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="base.html">Historial de Simulaciones</a></li>
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('historial') }}">Historial de Simulaciones</a></li>
             <li><a href="{{ url_for('about') }}">Sobre Nosotros</a></li>
         </ul>
     </div>

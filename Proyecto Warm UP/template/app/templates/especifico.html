@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="es">
   <head>
-    <title>Resultados de la Simulación</title>
+    <title>Resultados específico</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="../static/css/estilos2.css">
@@ -18,7 +18,7 @@
         <table class="table table-hover table-dark">
             <tr>
                 <th scope="row">Identificador</th>
-                <td>{{identificador}}</td>
+                <td>{{entry[0][1]}}</td>
             </tr>
         </table>
         <table class="table table-hover table-dark">
@@ -36,14 +36,14 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>{{horas_atencion}}</td>
-                    <td>{{pasos}}</td>
-                    <td>{{clientes_por_dia}}</td>
-                    <td>{{min_productos}}</td>
-                    <td>{{max_productos}}</td>
-                    <td>{{tiempo_seleccion}}</td>
-                    <td>{{tiempo_marcado}}</td>
-                    <td>{{tiempo_pago}}</td>
+                    <td>{{entry[0][2]}}</td>
+                    <td>{{entry[0][3]}}</td>
+                    <td>{{entry[0][4]}}</td>
+                    <td>{{entry[0][25]}}</td>
+                    <td>{{entry[0][26]}}</td>
+                    <td>{{entry[0][27]}}</td>
+                    <td>{{entry[0][28]}}</td>
+                    <td>{{entry[0][29]}}</td>
                 </tr>
             </tbody>
         </table>
@@ -66,29 +66,29 @@
             <tbody>
                 <tr>
                     <th scope="row">Distribución % de Clientes</th>
-                    <td>{{dclientesuno}}</td>
-                    <td>{{dclientesdos}}</td>
-                    <td>{{dclientestres}}</td>
-                    <td>{{dclientescuatro}}</td>
-                    <td>{{dclientescinco}}</td>
-                    <td>{{dclientesseis}}</td>
-                    <td>{{dclientessiete}}</td>
-                    <td>{{dclientesocho}}</td>
-                    <td>{{dclientesnueve}}</td>
-                    <td>{{dclientesdiez}}</td>
+                    <td>{{entry[0][6]}}</td>
+                    <td>{{entry[0][7]}}</td>
+                    <td>{{entry[0][8]}}</td>
+                    <td>{{entry[0][9]}}</td>
+                    <td>{{entry[0][10]}}</td>
+                    <td>{{entry[0][11]}}</td>
+                    <td>{{entry[0][12]}}</td>
+                    <td>{{entry[0][13]}}</td>
+                    <td>{{entry[0][14]}}</td>
+                    <td>{{entry[0][15]}}</td>
                 </tr>
                 <tr>
                     <th scope="row">Cajas Abiertas</th>
-                    <td>{{dcajauno}}</td>
-                    <td>{{dcajados}}</td>
-                    <td>{{dcajatres}}</td>
-                    <td>{{dcajacuatro}}</td>
-                    <td>{{dcajacinco}}</td>
-                    <td>{{dcajaseis}}</td>
-                    <td>{{dcajasiete}}</td>
-                    <td>{{dcajaocho}}</td>
-                    <td>{{dcajanueve}}</td>
-                    <td>{{dcajadiez}}</td>
+                    <td>{{entry[0][16]}}</td>
+                    <td>{{entry[0][17]}}</td>
+                    <td>{{entry[0][18]}}</td>
+                    <td>{{entry[0][19]}}</td>
+                    <td>{{entry[0][20]}}</td>
+                    <td>{{entry[0][21]}}</td>
+                    <td>{{entry[0][22]}}</td>
+                    <td>{{entry[0][23]}}</td>
+                    <td>{{entry[0][24]}}</td>
+                    <td>{{entry[0][25]}}</td>
                 </tr>
             </tbody>
         <table class="table table-hover table-dark">
@@ -106,92 +106,92 @@
                 
                 <tr>
                     <th scope="row">1</th>
-                    <td>{{ingresadosuno}}</td>
-                    <td>{{despachadosuno}}</td>
-                    <td>{{promProdsuno}}</td>
-                    <td>{{promColauno}}</td>
-                    <td>{{colaMaxuno}}</td>
+                    <td>{{resultuno[0][2]}}</td>
+                    <td>{{resultuno[0][3]}}</td>
+                    <td>{{resultuno[0][4]}}</td>
+                    <td>{{resultuno[0][5]}}</td>
+                    <td>{{resultuno[0][6]}}</td>
                 </tr>
                 <tr>
                     <th scope="row">2</th>
-                    <td>{{ingresadosdos}}</td>
-                    <td>{{despachadosdos}}</td>
-                    <td>{{promProdsdos}}</td>
-                    <td>{{promColados}}</td>
-                    <td>{{colaMaxdos}}</td>
+                    <td>{{resultdos[0][2]}}</td>
+                    <td>{{resultdos[0][3]}}</td>
+                    <td>{{resultdos[0][4]}}</td>
+                    <td>{{resultdos[0][5]}}</td>
+                    <td>{{resultdos[0][6]}}</td>
                 </tr>
                 <tr>
                     <th scope="row">3</th>
-                    <td>{{ingresadostres}}</td>
-                    <td>{{despachadostres}}</td>
-                    <td>{{promProdstres}}</td>
-                    <td>{{promColatres}}</td>
-                    <td>{{colaMaxtres}}</td>
+                    <td>{{resulttres[0][2]}}</td>
+                    <td>{{resulttres[0][3]}}</td>
+                    <td>{{resulttres[0][4]}}</td>
+                    <td>{{resulttres[0][5]}}</td>
+                    <td>{{resulttres[0][6]}}</td>
                 </tr>
                 <tr>
                     <th scope="row">4</th>
-                    <td>{{ingresadoscuatro}}</td>
-                    <td>{{despachadoscuatro}}</td>
-                    <td>{{promProdscuatro}}</td>
-                    <td>{{promColacuatro}}</td>
-                    <td>{{colaMaxcuatro}}</td>
+                    <td>{{resultcuatro[0][2]}}</td>
+                    <td>{{resultcuatro[0][3]}}</td>
+                    <td>{{resultcuatro[0][4]}}</td>
+                    <td>{{resultcuatro[0][5]}}</td>
+                    <td>{{resultcuatro[0][6]}}</td>
                 </tr>
                 <tr>
                     <th scope="row">5</th>
-                    <td>{{ingresadoscinco}}</td>
-                    <td>{{despachadoscinco}}</td>
-                    <td>{{promProdscinco}}</td>
-                    <td>{{promColacinco}}</td>
-                    <td>{{colaMaxcinco}}</td>
+                    <td>{{resultcinco[0][2]}}</td>
+                    <td>{{resultcinco[0][3]}}</td>
+                    <td>{{resultcinco[0][4]}}</td>
+                    <td>{{resultcinco[0][5]}}</td>
+                    <td>{{resultcinco[0][6]}}</td>
                 </tr>
                 <tr>
                     <th scope="row">6</th>
-                    <td>{{ingresadosseis}}</td>
-                    <td>{{despachadosseis}}</td>
-                    <td>{{promProdsseis}}</td>
-                    <td>{{promColaseis}}</td>
-                    <td>{{colaMaxseis}}</td>
+                    <td>{{resultseis[0][2]}}</td>
+                    <td>{{resultseis[0][3]}}</td>
+                    <td>{{resultseis[0][4]}}</td>
+                    <td>{{resultseis[0][5]}}</td>
+                    <td>{{resultseis[0][6]}}</td>
                 </tr>
                 <tr>
                     <th scope="row">7</th>
-                    <td>{{ingresadossiete}}</td>
-                    <td>{{despachadossiete}}</td>
-                    <td>{{promProdssiete}}</td>
-                    <td>{{promColasiete}}</td>
-                    <td>{{colaMaxsiete}}</td>
+                    <td>{{resultsiete[0][2]}}</td>
+                    <td>{{resultsiete[0][3]}}</td>
+                    <td>{{resultsiete[0][4]}}</td>
+                    <td>{{resultsiete[0][5]}}</td>
+                    <td>{{resultsiete[0][6]}}</td>
                 </tr>
                 <tr>
                     <th scope="row">8</th>
-                    <td>{{ingresadosocho}}</td>
-                    <td>{{despachadosocho}}</td>
-                    <td>{{promProdsocho}}</td>
-                    <td>{{promColaocho}}</td>
-                    <td>{{colaMaxocho}}</td>
+                    <td>{{resultocho[0][2]}}</td>
+                    <td>{{resultocho[0][3]}}</td>
+                    <td>{{resultocho[0][4]}}</td>
+                    <td>{{resultocho[0][5]}}</td>
+                    <td>{{resultocho[0][6]}}</td>
                 </tr>
                 <tr>
                     <th scope="row">9</th>
-                    <td>{{ingresadosnueve}}</td>
-                    <td>{{despachadosnueve}}</td>
-                    <td>{{promProdsnueve}}</td>
-                    <td>{{promColanueve}}</td>
-                    <td>{{colaMaxnueve}}</td>
+                    <td>{{resultnueve[0][2]}}</td>
+                    <td>{{resultnueve[0][3]}}</td>
+                    <td>{{resultnueve[0][4]}}</td>
+                    <td>{{resultnueve[0][5]}}</td>
+                    <td>{{resultnueve[0][6]}}</td>
                 </tr>
                 <tr>
                     <th scope="row">10</th>
-                    <td>{{ingresadosdiez}}</td>
-                    <td>{{despachadosdiez}}</td>
-                    <td>{{promProdsdiez}}</td>
-                    <td>{{promColadiez}}</td>
-                    <td>{{colaMaxdiez}}</td>
+                    <td>{{resultdiez[0][2]}}</td>
+                    <td>{{resultdiez[0][3]}}</td>
+                    <td>{{resultdiez[0][4]}}</td>
+                    <td>{{resultdiez[0][5]}}</td>
+                    <td>{{resultdiez[0][6]}}</td>
                 </tr>
                 <tr>
                     <th scope="row">Nª Simulación</th>
-                    <td>{{entrada_id}}</td>
+                    <td>{{result[0][1]}}</td>
                     
                 </tr>
                 <tr>
                     <th scope="row">Tiempo total simulado</th>
-                    <td>{{tiempo_total_simulado}} minutos</td>
+                    <td>{{result[0][2]}} minutos</td>
                     
                 </tr>
             </tbody>
